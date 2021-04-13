@@ -17,6 +17,9 @@ st.text("")
 
 # Variabel
 gender = ('Male','Female')
+pclass = [1,2,3]
+parch = [0,1,2,3,4,5,6]
+sibsp = [0,1,2,3,4,5]
 male = 0
 female = 0
 
@@ -24,30 +27,31 @@ female = 0
 age = st.number_input('Passenger Age : ')
 
 Fare = st.number_input('Passenger Fare : ')
+Fare = int(Fare)
 
-Parch = st.number_input('Passenger Parch : ')
+selectedSibSp = st.selectbox('Passenger SibSp : ',sibsp)
 
-Pclass = st.number_input('Passenger Pclass : ')
+selectedParch = st.selectbox('Passenger Parch : ',parch)
 
-electedGender = st.selectbox('Select Passenger Gender : ',gender)
-if electedGender == 'Male':
+selectedPclass = st.selectbox('Passenger Pclass : ',pclass)
+
+selectedGender = st.selectbox('Select Passenger Gender : ',gender)
+if selectedGender == 'Male':
     male = 1.0
     female = 0.0
 else:
-    male - 0.0
+    male = 0.0
     female = 1.0
 
-SibSp = st.number_input('Passenger SibSp : ')
-
 # prediction
-predict  = model.predict([[age,Fare,Parch,female,male,SibSp]])
+predict  = model.predict([[age,Fare,selectedParch,selectedPclass,female,male,selectedSibSp]])
 
 if predict == 1.0:
-    temp = 'Passenger are Survived'
+    temp = 'Alhamdulillah, Passenger are Survived'
 elif predict == 0.0:
     temp = 'Rest in Peace :('
 
-button = st.button('Predicton',key=1)
+button = st.button('Prediction',key=1)
 
 if button==True:
     st.write(temp)
