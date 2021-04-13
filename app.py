@@ -21,15 +21,15 @@ male = 0
 female = 0
 
 # menerima inputan Age	Fare	Parch	Pclass	Sex_female	Sex_male	SibSp
-age = st.number_input('Your Age : ')
+age = st.number_input('Passenger Age : ')
 
-Fare = st.number_input('Your Fare : ')
+Fare = st.number_input('Passenger Fare : ')
 
-Parch = st.number_input('Your Parch : ')
+Parch = st.number_input('Passenger Parch : ')
 
-Pclass = st.number_input('Your Pclass : ')
+Pclass = st.number_input('Passenger Pclass : ')
 
-electedGender = st.selectbox('Select Your Gender : ',gender)
+electedGender = st.selectbox('Select Passenger Gender : ',gender)
 if electedGender == 'Male':
     male = 1.0
     female = 0.0
@@ -37,13 +37,13 @@ else:
     male - 0.0
     female = 1.0
 
-SibSp = st.number_input('Your SibSp : ')
+SibSp = st.number_input('Passenger SibSp : ')
 
 # prediction
 predict  = model.predict([[age,Fare,Parch,female,male,SibSp]])
 
 if predict == 1.0:
-    temp = 'You are Survived'
+    temp = 'Passenger are Survived'
 elif predict == 0.0:
     temp = 'Rest in Peace :('
 
