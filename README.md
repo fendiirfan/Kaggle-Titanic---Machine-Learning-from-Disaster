@@ -1,6 +1,6 @@
 # Predicting the Survival of Titanic Disaster Web APP
 
-## requirment for this project
+## requirement for this project
 
 Python 3.9.4
 
