@@ -11,4 +11,4 @@ $ pip install streamlit
 ```
 -----------
 
-## [link website](http://titanic-prediction-streamlit.herokuapp.com)
+## [link Web App Project](http://titanic-prediction-streamlit.herokuapp.com)
